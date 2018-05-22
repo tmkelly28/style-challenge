@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom'
 import axios from 'axios'
 
 const EntryForm = ({handleSubmit}) => (
-  <form onSubmit={handleSubmit}>
+  <form className="form" onSubmit={handleSubmit}>
     <input type='text' name='content' required />
     <button type='submit'>Submit</button>
   </form>
@@ -82,11 +82,11 @@ class EntryList extends Component {
         <ul>
           {
             Object.values(entries).map(entry => (
-              <li key={entry.id}>
-                <span>{entry.content}</span>
-                <a onClick={this.upvote(entry.id)}>
-                  <span>^ ({entry.votes})</span>
+              <li className="list" key={entry.id}>
+                <a className="upvote" onClick={this.upvote(entry.id)}>
+                  <span>{entry.votes}</span>
                 </a>
+                <span className="content">{entry.content}</span>
               </li>
             ))
           }
