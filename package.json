@@ -5,6 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "@tmkelly28/tk-css": "^1.0.2",
+    "axios": "^0.18.0",
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "morgan": "^1.8.2",
@@ -16,7 +17,10 @@
     "sequelize": "^4.2.1"
   },
   "scripts": {
-    "start": "webpack -w & nodemon server/app.js --ignore public"
+    "start:dev": "webpack -w & nodemon server/app.js --ignore public",
+    "start": "node server/app.js",
+    "deploy": "sh ./deploy.sh",
+    "seed": "node server/seed.js"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

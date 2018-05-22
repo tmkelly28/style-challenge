@@ -2,7 +2,7 @@ const express = require('express')
 const path = require('path')
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
-const db = require('./db')
+const {db, Entry} = require('./db')
 const app = express()
 const PORT = 3000
 
@@ -17,6 +17,28 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static(path.join(__dirname, '..', 'public')))
 
 // If you want to add routes, they should go here!
+app.get('/api/entries', (req, res, next) => {
+  Entry.findAll()
+    .then(entries => res.json(entries))
+    .catch(next)
+})
+
+app.post('/api/entries', (req, res, next) => {
+  const {content} = req.body
+  Entry.create({content})
+    .then(entry => res.json(entry))
+    .catch(next)
+})
+
+app.put('/api/entries/:entryId', (req, res, next) => {
+  Entry.findById(req.params.entryId)
+    .then(entry => {
+      entry.votes++
+      return entry.save()
+    })
+    .then(entry => res.json(entry))
+    .catch(next)
+})
 
 // For all GET requests that aren't to an API route,
 // we will send the index.html!
