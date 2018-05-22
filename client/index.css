@@ -1,8 +1,64 @@
 body {
   font-family: arial, sans-serif;
   box-sizing: border-box;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/3.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+.list {
+  background-color: rgb(245, 245, 245, 0.3);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 0.5em;
+  margin: 0.25em;
+}
+
+.upvote {
+  background-color: rgb(217,61,0);
+  border-radius: 50%;
+  border: solid 1px black;
+  padding: 0.5em;
+  margin: 0.25em;
+}
+
+.upvote:hover {
+  background-color: lightseagreen;
+  transition: 0.7s linear;
+}
+
+button {
+  background-color: lightseagreen;
+  margin: 0.25em;
+  border: none;
+  padding: 0.5em;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: rgb(217,61,0);
+  transition: 0.7s linear;
+}
+
+input {
+  padding: 0.5em;
+  border-radius: 5px;
+  border: none;
+}
+
+#app {
+  background-color: rgb(235, 235, 235, 0.3);
+  border-radius: 5px;
+  padding: 2em;
 }
