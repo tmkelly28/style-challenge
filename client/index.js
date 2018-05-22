@@ -1,4 +1,3 @@
-import '@tmkelly28/tk-css'
 import './index.css'
 
 import React, {Component} from 'react'
@@ -99,7 +98,7 @@ class EntryList extends Component {
 }
 
 ReactDOM.render(
-  <div id='demo' className='bg-blue column center-xy fill-xy'>
+  <div>
     <EntryList />
   </div>,
   document.getElementById('app')

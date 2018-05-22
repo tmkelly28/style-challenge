@@ -1,9 +1,8 @@
-#app {
+body {
+  font-family: arial, sans-serif;
+  box-sizing: border-box;
   height: 100%;
   width: 100%;
   margin: 0;
-}
-
-#demo div {
-  font-size: 30px;
+  padding: 0;
 }
